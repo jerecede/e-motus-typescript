@@ -1,0 +1,42 @@
+[
+    {
+        "id": "user1-1742977826334",
+        "value": 4,
+        "note": "lorem impusm dolore",
+        "creationDate": 1742977826334,
+        "location": {
+            "lat": 44.40897174104969,
+            "lng": 8.929527831366816
+        }
+    },
+    {
+        "id": "user1-1742978107038",
+        "value": 3,
+        "note": "aiutoooooooooo",
+        "creationDate": 1742978107038,
+        "location": {
+            "lat": 44.40897174104969,
+            "lng": 8.929527831366816
+        }
+    },
+    {
+        "id": "user1-1742978124126",
+        "value": 2,
+        "note": "hahahahahhahh",
+        "creationDate": 1742978124126,
+        "location": {
+            "lat": 44.40897174104969,
+            "lng": 8.929527831366816
+        }
+    },
+    {
+        "id": "user1-1742978137142",
+        "value": 1,
+        "note": "zzzzzzzzzzzzzzzzzzzzzzzz",
+        "creationDate": 1742978137142,
+        "location": {
+            "lat": 44.40897174104969,
+            "lng": 8.929527831366816
+        }
+    }
+]
