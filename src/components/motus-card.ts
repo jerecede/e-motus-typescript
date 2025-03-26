@@ -14,6 +14,12 @@ export default class MotusCard extends HTMLElement {
         //     return JSON.parse(motusStr);
         // }
         // return null;
+
+
+        //dal motus-card ricava dal suo attributo selected-motus i dati del suo motus,
+        //(perchè motus-list ha creato i motus-card aggiungendo quell'attributo dove ci ha messo i dati strigifati)
+        //e li ritorna come oggetto.
+         
         return JSON.parse(this.getAttribute('selected-motus')!);
     }
 
@@ -63,6 +69,7 @@ export default class MotusCard extends HTMLElement {
     render() {
         const mainDiv = document.createElement('div');
         mainDiv.classList.add('card');
+        //con this.motus sta chiamando il getter motus, che ritorna l'oggetto motus
         mainDiv.innerHTML = `
             <span class="emoticon">
                 ${this.fromValueToEmoji(this.motus.value)}

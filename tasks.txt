@@ -1,0 +1,17 @@
+ESERCIZI voglio morire
+- tasto randomMotus - this.addRandomMotus()
+(si riempie la lista con moti + date + note a caso)
+
+- usare la logica student per aggiungere motus in Typescript
+dialog con selezione di emozione, nota, data, orario
+
+- bonus: cancellazione card-motus SEI SICUROOO??? SI
+
+- navbar: icona e nome app, le funzionalità le metteremo.... se non si muore prima
+
+DOMANDE
+
+-a cosa serve form.reset
+-come non chiudere dialog e e fare required
+-location
+-per fare la remove creare un altro super-tag dialog o sauare motus-dialog
