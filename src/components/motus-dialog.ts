@@ -49,7 +49,7 @@ export default class MotusDialog extends HTMLElement{
             <label for="motus4">😃</label>
 
             <label for="note">Explain why:</label>
-            <input type="text" name="note" id="note">
+            <textarea name="note" id="note"></textarea>
 
             <input type="checkbox" name="location" id="location">
             <label for="location">share location</label>
