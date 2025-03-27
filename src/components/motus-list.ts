@@ -27,7 +27,6 @@ export default class MotusList extends HTMLElement {
         motusDialog.addEventListener('motus-added', (event) => { //addEventListener non prende Customevent, expects an EventListener or EventListenerObject, non posso fare parametro event: CustomEvent
             const customEvent = event as CustomEvent;
             const newMotus = customEvent.detail;
-            console.log(newMotus);
             this.moti = this.service.addMotus(newMotus);
             this.render();
         });
@@ -40,10 +39,15 @@ export default class MotusList extends HTMLElement {
     styling(){
         const style = document.createElement('style');
         style.innerText = `
+            .grid-container{
+                height: 100%;
+            }
+
             .grid{
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 16px;
+                height: 100%;
             }
 
             .add-btn{
@@ -65,11 +69,13 @@ export default class MotusList extends HTMLElement {
 
         //container div principale
         let container = this.shadowRoot!.getElementById('container');
+
         //se c'è container, lo svuoto(per non crearne più di uno), altrimenti lo creo (perchè prima volta)
         if(container){
             container.innerHTML = '';
         } else {
             container = document.createElement('div');
+            container.classList.add('grid-container');
             container.id = "container"; // container.setAttribute("id", "container")
             this.shadowRoot!.appendChild(container);
         }
@@ -94,12 +100,18 @@ export default class MotusList extends HTMLElement {
         addBtn.classList.add('add-btn');
         addBtn.appendChild(document.createTextNode("➕"));
         addBtn.addEventListener('click', () => {
-            //ottiene il dialog di motus-dialog, lo apre, il dialog permetterà aggiungere un motus
-            const motusDialog: MotusDialog = document.getElementById('motus-dialog') as MotusDialog;
-            motusDialog.addMotus();
+            //apre dialog di motus-dialog
+            this.openDialog();
         });
         container.appendChild(addBtn)
         
+    }
+
+    //apre dialog di motus-dialog per aggiungere un nuovo motus
+    openDialog(){
+        //ottiene il dialog di motus-dialog, con la funzione addMotus di motus-dialog lo apre, per poi aggiungere un nuovo motus
+        const motusDialog: MotusDialog = document.getElementById('motus-dialog') as MotusDialog;
+        motusDialog.addMotus();
     }
 
     addRandomMotus(){

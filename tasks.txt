@@ -14,3 +14,6 @@ DOMANDE
 -come non chiudere dialog e e fare required
 -location
 -per fare la remove creare un altro super-tag dialog o sauare motus-dialog
+
+NUOVI ESERCIZI
+-creare classe Motus che avra funzioni per ordinare(per data o per emozioni) stare attenti con il servicen funzioni createMotusfromObject
