@@ -8,7 +8,7 @@ export default class MotusService {
         this.moti = [];
     }
 
-    //scarica i moti dalla memoria locale, se non ci sono, li scarica dal json per
+    //scarica i moti dalla memoria locale, se non ci sono, li scarica dal json, tutto per
     // -salvarli in this.moti e poi
     // -restituirli al chiamante (motus-list)
     async loadMoti() {
@@ -52,5 +52,9 @@ export default class MotusService {
         this.moti = motiModified;
         this.saveMoti();
         return this.moti;
+    }
+
+    editMotus(){
+
     }
 }
