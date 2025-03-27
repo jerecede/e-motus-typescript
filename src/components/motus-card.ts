@@ -1,4 +1,4 @@
-import Motus from "../model/motus";
+import Motus from "../model/motus-interface";
 
 export default class MotusCard extends HTMLElement {
 

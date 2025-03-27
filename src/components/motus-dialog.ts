@@ -1,5 +1,5 @@
-import Location from "../model/location";
-import Motus from "../model/motus";
+import Location from "../model/location-interface";
+import Motus from "../model/motus-interface";
 
 export default class MotusDialog extends HTMLElement{
 

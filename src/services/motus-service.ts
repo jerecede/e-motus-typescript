@@ -14,9 +14,11 @@ export default class MotusService {
     async loadMoti() {
         const localMotiString = localStorage.getItem('moti');
         if(localMotiString){
-            this.moti = JSON.parse(localMotiString);
+            const data = JSON.parse(localMotiString);
+            this.moti = this.createMotiFromData(data);
         } else {
-            this.moti = await this.getMotiFromJson()
+            const data = await this.getMotiFromJson()
+            this.moti = this.createMotiFromData(data);
             this.saveMoti();
         }
 
@@ -56,5 +58,20 @@ export default class MotusService {
 
     editMotus(){
 
+    }
+
+    //converte il data preso da local storage in oggetti di tipo Motus(con le sue funzioni), non più oggetti generici
+    createMotiFromData(data: Motus[]){
+        const moti = [];
+
+        for (let i = 0; i < data.length; i++) {
+            const motus = data[i];
+            
+            const newMotus = new Motus(motus.id, motus.value, motus.note, motus.location);
+
+            moti.push(newMotus);
+        }
+
+        return moti;
     }
 }

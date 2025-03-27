@@ -1,39 +1,45 @@
-export default class MotusBar extends HTMLElement {
+export default class MotusBar extends HTMLElement{
 
-    constructor() {
+    constructor(){
         super();
-        this.attachShadow({ mode: 'open' });
+        this.attachShadow({mode: 'open'});
     }
 
-    connectedCallback() {
+    connectedCallback(){
+
         this.styling();
         this.render()
     }
 
-    styling() {
+    styling(){
         const style = document.createElement('style');
         style.innerText = `
             .bar span{
-                font-size: 30px;
+                font-size: 36px;
                 padding: 0px 8px;
+                
             }
-
             .bar{
-                border-style: solid;
+                border-bottom: solid;
             }
         `
         this.shadowRoot!.appendChild(style);
     }
 
-    render() {
+    render(){
         const mainDiv = document.createElement('div');
-        mainDiv.classList.add('bar');
+        mainDiv.classList.add('bar')
         mainDiv.innerHTML = `
-            <span>😎</span>
-            <span>E-MOTUS</span>
+            <span>
+                😎
+            </span>
+            <span>
+                E-MOTUS
+            </span>
         `;
         this.shadowRoot!.appendChild(mainDiv);
     }
+
 
 }
 

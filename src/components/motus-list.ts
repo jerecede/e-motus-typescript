@@ -1,4 +1,4 @@
-import Location from "../model/location";
+import Location from "../model/location-interface";
 import Motus from "../model/motus";
 import MotusService from "../services/motus-service";
 import MotusCard from "./motus-card";
@@ -20,6 +20,10 @@ export default class MotusList extends HTMLElement {
 
         //scarica dalla memoria locale i moti, o se non ci sono, li scarica dal json
         this.moti = await this.service.loadMoti();
+
+        //test sort
+        console.log(this.moti);
+        console.log(this.moti.sort((m1, m2) => m1.compareByDate(m2)));
 
         //vede se è stato spedito un evento(l'evento di aggiungere Motus, motus-added) dentro motus-dialog.
         //l'evento contiene i dati del motus da aggiungere, una volta ricevuto, aggiunge il motus allo storage (addMotus())
@@ -128,20 +132,14 @@ export default class MotusList extends HTMLElement {
         const date = new Date()
         const creationDate = date.getTime();
 
-        const id = 'user1' + creationDate
+        const id = 'user1-' + creationDate
 
         const location: Location = {
             lat: 44.40897174104969,
             lng: 8.929527831366816
         }
 
-        const motus: Motus = {
-            id: id,
-            value: value,
-            note: note,
-            creationDate: creationDate,
-            location: location
-        } 
+        const motus = new Motus(id, value, note, location);
 
         console.log(motus);
 
