@@ -37,14 +37,16 @@ export default class MotusService {
         return this.moti;
     }
 
-    //aggiunge un motus a this.moti, lo aggiunge alla memoria locale e poi lo restituisce al chiamante (motus-list cosi aggiorna il suo this.moti)
+    //aggiunge un motus a this.moti, lo aggiunge alla memoria locale
+    // e poi lo restituisce al chiamante (motus-list cosi aggiorna il suo this.moti)
     addMotus(motus: Motus){
         this.moti.push(motus);
         this.saveMoti();
         return this.moti;
     }
 
-    //rimuove un motus a this.moti, lo aggiunge alla memoria locale e poi lo restituisce al chiamante (motus-list cosi aggiorna il suo this.moti)
+    //rimuove un motus a this.moti, lo aggiunge alla memoria locale
+    // e poi lo restituisce al chiamante (motus-list cosi aggiorna il suo this.moti)
     removeMotus(motus: Motus){
         const motiModified = this.moti.filter(m => m.id !== motus.id);
         this.moti = motiModified;
