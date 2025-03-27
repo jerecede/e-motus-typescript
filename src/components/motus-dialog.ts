@@ -163,7 +163,7 @@ export default class MotusDialog extends HTMLElement{
     // funzione chiamata quando viene premuto il pulsante ➕, funzione che apre la dialog che si trova dentro la motus-dialog,
     // e la dialog si occuperà di aggiungere un motus tramite un form
     addMotus(){
-        //resetta il form (non so cosa faccia)
+        //resetta il form (serve per quando aggiungo editMotus)
         const form: HTMLFormElement = this.shadowRoot!.getElementById('form') as HTMLFormElement;
         if(form){
             form.reset();
@@ -174,4 +174,4 @@ export default class MotusDialog extends HTMLElement{
     }
 }
 
-customElements.define('motus-dialog', MotusDialog)
+customElements.define('motus-dialog', MotusDialog);
