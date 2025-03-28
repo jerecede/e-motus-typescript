@@ -17,3 +17,6 @@ DOMANDE
 
 NUOVI ESERCIZI
 -creare classe Motus che avra funzioni per ordinare(per data o per emozioni) stare attenti con il servicen funzioni createMotusfromObject
+
+TODOLIST
+-la motus-bar deve spedire un event a motus-list per renderizzare di nuovo
